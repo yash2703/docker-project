@@ -1,0 +1,12 @@
+#docker volume create mysql-storage
+
+#docker volume create wp-storage
+
+#docker run-dit  -e MYSQL_ROOT_PASSWORD=rootpass
+-e MYSQL_USER=yash -e MYSQL_PASSWORD=redhat -e MYSQL_DATABASE=mydb  l --name dbos mysql:5.7
+
+#docker run -dit -e WORDPRESS_DB_HOST=dbos -e WORDPRESS_DB_USER=yash -e WORDPRESS_DB_PASSWORD=redhat -e 
+WORDPRESSS_DB_NAME=mydb -v wp-storage:/var/www/html -p 9091:80 --name wpos --link dbos wordpress:5.1.1-php7.3-apache
+
+
+
